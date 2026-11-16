@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CV – Trương Lê Bảo Lộc</title>
+<style>
+:root {
+  --bg: #e6e8eb; --paper: #ffffff; --ink: #22282f; --muted: #5d6670; --line: #b9c0c8;
+  --side: #41464c; --side-ink: #f1f3f5; --bar: #646b73; --fill: #f1f3f5;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101316; --paper: #1a1f24; --ink: #e8ecf0; --muted: #98a3ae; --line: #3a444e;
+    --side: #2b3036; --side-ink: #f1f3f5; --bar: #4a5159; --fill: #e8ecf0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101316; --paper: #1a1f24; --ink: #e8ecf0; --muted: #98a3ae; --line: #3a444e;
+  --side: #2b3036; --side-ink: #f1f3f5; --bar: #4a5159; --fill: #e8ecf0;
+  color-scheme: dark;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0; padding: 24px 12px; background: var(--bg); color: var(--ink);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.55;
+}
+.cv {
+  display: grid; grid-template-columns: 40% 60%; max-width: 860px; margin: 0 auto;
+  background: var(--paper); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 2px 14px rgba(0,0,0,.2);
+}
+.side { background: var(--side); color: var(--side-ink); padding: 28px 24px 32px; }
+.avatar { display: block; width: 120px; height: 120px; margin: 0 auto 8px; color: var(--side-ink); }
+.side h2 { font-size: 1.05rem; margin: 26px 0 8px; text-transform: uppercase; letter-spacing: .02em; }
+.side p, .side li { margin: 4px 0; font-size: .93rem; overflow-wrap: anywhere; }
+.side ul { list-style: none; margin: 0; padding: 0; }
+.ico { display: inline-block; width: 1.6em; }
+.skill { margin: 10px 0; font-size: .93rem; }
+.bar { height: 6px; margin-top: 4px; background: var(--bar); border-radius: 3px; }
+.bar i { display: block; height: 100%; background: var(--fill); border-radius: 3px; }
+
+.main { padding: 28px 28px 32px; }
+.main h1 { margin: 0; font-size: 2.1rem; line-height: 1.15; text-transform: uppercase; }
+.title { margin: 6px 0 0; font-weight: 600; color: var(--muted); }
+.main h2 {
+  margin: 28px 0 12px; font-size: 1.05rem; text-transform: uppercase;
+  padding-bottom: 4px; border-bottom: 1px dotted var(--line);
+}
+.main h3 { margin: 14px 0 2px; font-size: .98rem; }
+.main p { margin: 0; font-size: .93rem; color: var(--muted); }
+
+@media (max-width: 600px) {
+  .cv { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="cv">
+
+  <aside class="side">
+    <svg class="avatar" viewBox="0 0 100 100" role="img" aria-label="Ảnh đại diện" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round">
+      <circle cx="50" cy="50" r="46"/>
+      <circle cx="50" cy="38" r="15"/>
+      <path d="M22 80c4-16 16-22 28-22s24 6 28 22"/>
+    </svg>
+
+    <h2>Giới thiệu</h2>
+    <p>Tôi là Trương Lê Bảo Lộc, yêu thích thiết kế web và sáng tạo nội dung web. Tôi đang rèn luyện HTML, CSS, JavaScript và mong muốn trở thành lập trình viên web chuyên nghiệp.</p>
+
+    <h2>Thông tin & Liên hệ</h2>
+    <ul>
+        <li>Giới tính: Nam</li>
+        <li>Ngày sinh: 29/10/2008</li>
+        <li>Địa chỉ: Vĩnh Long</li>
+        <li>Sđt: 0839 938 996</li>
+        <li>Gmail: truongloc1410@gmail.com</li>
+    </ul>
+
+    <h2>Kỹ năng</h2>
+    <div class="skill">HTML<div class="bar"><i style="width:90%"></i></div></div>
+    <div class="skill">CSS<div class="bar"><i style="width:85%"></i></div></div>
+    <div class="skill">JavaScript<div class="bar"><i style="width:75%"></i></div></div>
+    <div class="skill">Tiếng Anh<div class="bar"><i style="width:70%"></i></div></div>
+
+    <h2>Sở thích</h2>
+    <ul>
+      <li>Thiết kế Web</li>
+      <li>Sáng tạo nội dung Web</li>
+    </ul>
+
+    <h2>Người tham chiếu</h2>
+    <p><strong>Thầy Lương Trần Hy Hiến</strong><br>Giảng viên khoa Công nghệ thông tin</p>
+    <p>Sđt: 0912 345 678<br>Gmail: hienluong@gmail.com</p>
+  </aside>
+
+  <main class="main">
+    <h1>Trương Lê Bảo Lộc</h1>
+    <p class="title">Vị trí ứng tuyển: Lập trình viên Web</p>
+
+    <h2>Chứng chỉ</h2>
+    <h3>2025 – Responsive Web Design (freeCodeCamp)</h3>
+    <p>Hoàn thành khóa học HTML, CSS, bố cục flexbox/grid và thiết kế responsive.</p>
+    <h3>2026 – JavaScript Algorithms and Data Structures (freeCodeCamp)</h3>
+    <p>Nắm vững JavaScript nền tảng: biến, hàm, mảng, đối tượng.</p>
+    <h3>2026 – Chứng chỉ tiếng Anh VSTEP B1</h3>
+    <p>Đọc hiểu tài liệu kỹ thuật và giao tiếp cơ bản bằng tiếng Anh.</p>
+
+    <h2>Kinh nghiệm làm việc</h2>
+    <h3>03/2026 – 08/2026 – Cộng tác viên thiết kế web, Câu lạc bộ Tin học</h3>
+    <p>Thiết kế trang giới thiệu câu lạc bộ bằng HTML, CSS, JavaScript và viết bài đăng trên website.</p>
+    <h3>09/2026 – nay – Dự án cá nhân: Website giới thiệu bản thân</h3>
+    <p>Tự thiết kế trang CV trực tuyến, hiển thị tốt trên cả máy tính và điện thoại.</p>
+  </main>
+
+</div>
+</body>
+</html>
