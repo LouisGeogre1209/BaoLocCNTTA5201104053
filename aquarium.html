@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hồ cá vui nhộn</title>
+<style>
+:root {
+  --bg: #e6eef5; --ink: #12324d;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #0d141b; --ink: #dbe8f3; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #0d141b; --ink: #dbe8f3; color-scheme: dark; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body { margin: 0; padding: 20px 12px; background: var(--bg); color: var(--ink); font-family: "Segoe UI", Roboto, Arial, sans-serif; }
+h1 { text-align: center; margin: 0 0 14px; font-size: 1.6rem; }
+
+.tank {
+  position: relative; overflow: hidden; max-width: 900px; height: 420px; margin: 0 auto;
+  border: 6px solid #5c7a94; border-radius: 10px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 40px, transparent 40px 120px) 0 0 / 120px 100%,
+    linear-gradient(#2aa3e0, #0a3d6b);
+  animation: scene 8s linear infinite;
+}
+.tank::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 28px; background: #d9b97a; }
+@keyframes scene { to { background-position: 120px 0, 0 0; } }
+
+.swimmer { position: absolute; top: var(--y); left: 0; width: var(--w); animation: swim var(--t) linear infinite; animation-delay: var(--d, 0s); }
+.swimmer img { display: block; width: 100%; height: auto; }
+@keyframes swim {
+  0%    { left: 0; transform: scaleX(1); }
+  49.9% { left: calc(100% - var(--w)); transform: scaleX(1); }
+  50%   { left: calc(100% - var(--w)); transform: scaleX(-1); }
+  99.9% { left: 0; transform: scaleX(-1); }
+  100%  { left: 0; transform: scaleX(1); }
+}
+
+.bob { animation: bob var(--b) ease-in-out infinite alternate; }
+@keyframes bob {
+  from { transform: translateY(calc(var(--a) * -1)); }
+  to   { transform: translateY(var(--a)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tank, .swimmer, .bob { animation-play-state: paused; }
+}
+@media (max-width: 600px) { .tank { height: 360px; } }
+</style>
+</head>
+<body>
+<h1>Hồ cá vui nhộn</h1>
+
+<div class="tank">
+  <div class="swimmer" style="--y:5%; --w:150px; --t:9s"><img src="aquarium/shark.png" alt="Cá mập"></div>
+  <div class="swimmer" style="--y:18%; --w:110px; --t:7s; --d:-2s"><img src="aquarium/goldFishSchool.png" alt="Đàn cá vàng"></div>
+  <div class="swimmer" style="--y:30%; --w:90px; --t:24s; --d:-6s"><img src="aquarium/turtle.png" alt="Rùa"></div>
+  <div class="swimmer" style="--y:42%; --w:130px; --t:14s; --d:-3s"><img src="aquarium/faintSchool.png" alt="Đàn cá nhỏ"></div>
+  <div class="swimmer" style="--y:52%; --w:130px; --t:16s"><img class="bob" style="--a:45px; --b:3s" src="aquarium/diver1.png" alt="Thợ lặn 1"></div>
+  <div class="swimmer" style="--y:64%; --w:130px; --t:12s; --d:-4s"><img class="bob" style="--a:35px; --b:2.4s" src="aquarium/diver2.png" alt="Thợ lặn 2"></div>
+  <div class="swimmer" style="--y:38%; --w:130px; --t:19s; --d:-9s"><img class="bob" style="--a:50px; --b:3.6s" src="aquarium/diver3.png" alt="Thợ lặn 3"></div>
+</div>
+</body>
+</html>
